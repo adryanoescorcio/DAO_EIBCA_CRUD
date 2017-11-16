@@ -11,7 +11,7 @@ namespace PIBICAS.Models
         }
 
         public int MunicipioId { get; set; }
-        public int MunicipioUdIf { get; set; }
+        public int MunicipioIdUf { get; set; }
         public string MunicipioNome { get; set; }
         public virtual ICollection<Usuario> Usuarios { get; set; }
         public virtual Uf Uf { get; set; }

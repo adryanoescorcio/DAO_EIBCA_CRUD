@@ -12,11 +12,12 @@ namespace PIBICAS.Models.Dao
         IBCAContext db = new IBCAContext();
 
         public void InsertOrUpdate(Usuario obj)
-        {
+        { 
             try
             {
                 db.Entry(obj).State = obj.UsuarioId == 0 ? EntityState.Added : EntityState.Modified;
                 db.SaveChanges();
+                db.Dispose();
             }
             catch (Exception ex)
             {
@@ -31,6 +32,7 @@ namespace PIBICAS.Models.Dao
                 var obj = db.Usuarios.Find(id);
                 db.Usuarios.Remove(obj);
                 db.SaveChanges();
+                db.Dispose();
             }
             catch (Exception ex)
             {
@@ -43,7 +45,7 @@ namespace PIBICAS.Models.Dao
             try
             {
                 var dados = db.Usuarios;
-
+                db.Dispose();
                 return dados;
             }
             catch (Exception ex)
@@ -56,11 +58,27 @@ namespace PIBICAS.Models.Dao
         {
             try
             {
-                return db.Usuarios.FirstOrDefault(x => x.UsuarioId == id);
+                var obj = db.Usuarios.FirstOrDefault(x => x.UsuarioId == id);
+                db.Dispose();
+                return obj;
             }
             catch (Exception)
             {
+                throw;
+            }
+        }
 
+        public Usuario PesquisarPorEmail(String _email)
+        {
+            try
+            {
+                var obj = db.Usuarios.FirstOrDefault(x => x.UsuarioEmail == _email && x.UsuarioStatus == "Ativo");
+                db.Dispose();
+                return obj;
+
+            }
+            catch (Exception)
+            {
                 throw;
             }
         }

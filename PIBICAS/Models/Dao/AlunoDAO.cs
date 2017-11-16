@@ -13,8 +13,10 @@ namespace PIBICAS.Models.Dao
 
         public void InsertOrUpdate(Aluno aluno)
         {
+
             try
             {
+
                 db.Entry(aluno).State = aluno.AlunoId == 0 ? EntityState.Added : EntityState.Modified;
                 db.SaveChanges();
             }

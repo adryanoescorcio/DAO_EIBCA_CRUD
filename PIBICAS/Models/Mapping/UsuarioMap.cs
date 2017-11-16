@@ -35,7 +35,7 @@ namespace PIBICAS.Models.Mapping
 
             this.Property(t => t.UsuarioSenha)
                 .IsRequired()
-                .HasMaxLength(12);
+                .HasMaxLength(150);
 
             this.Property(t => t.UsuarioCPF)
                 .IsRequired()

@@ -65,5 +65,18 @@ namespace PIBICAS.Models.Dao
             }
         }
 
+        public IQueryable<Municipio> CarregarMunicipios(int _idUf)
+        {
+            try
+            {
+                var dados = db.Municipios.Where(x => x.MunicipioIdUf == _idUf);
+
+                return dados;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error ao carregar os dados" + ex.Message);
+            }
+        }
     }
 }

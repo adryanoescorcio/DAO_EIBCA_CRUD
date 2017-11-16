@@ -21,13 +21,13 @@ namespace PIBICAS.Models.Mapping
             // Table & Column Mappings
             this.ToTable("Municipio");
             this.Property(t => t.MunicipioId).HasColumnName("MunicipioId");
-            this.Property(t => t.MunicipioUdIf).HasColumnName("MunicipioUfId");
+            this.Property(t => t.MunicipioIdUf).HasColumnName("MunicipioUfId");
             this.Property(t => t.MunicipioNome).HasColumnName("MunicipioNome");
 
             // Relationships
             this.HasRequired(t => t.Uf)
                 .WithMany(t => t.Municipios)
-                .HasForeignKey(d => d.MunicipioUdIf);
+                .HasForeignKey(d => d.MunicipioIdUf);
 
         }
     }

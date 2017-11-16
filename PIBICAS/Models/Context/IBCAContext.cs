@@ -1,6 +1,7 @@
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using PIBICAS.Models.Mapping;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace PIBICAS.Models
 {
@@ -12,9 +13,11 @@ namespace PIBICAS.Models
         }
 
         public IBCAContext()
-            : base("Name=IBCAContext")
+            : base("IBCAContext")
         {
         }
+
+        private const string schemaName = "IBCA";
 
         public DbSet<Acesso> Acessoes { get; set; }
         public DbSet<Aluno> Alunoes { get; set; }
@@ -35,6 +38,12 @@ namespace PIBICAS.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+
+            // modelBuilder.HasDefaultSchema(schemaName);
+
             modelBuilder.Configurations.Add(new AcessoMap());
             modelBuilder.Configurations.Add(new AlunoMap());
             modelBuilder.Configurations.Add(new ClasseMap());
@@ -51,6 +60,8 @@ namespace PIBICAS.Models
             modelBuilder.Configurations.Add(new UfMap());
             modelBuilder.Configurations.Add(new UsuarioMap());
             modelBuilder.Configurations.Add(new UsuarioFuncionalidadeMap());
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

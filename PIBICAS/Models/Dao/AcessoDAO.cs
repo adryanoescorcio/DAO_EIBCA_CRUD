@@ -64,5 +64,18 @@ namespace PIBICAS.Models.Dao
                 throw;
             }
         }
+
+        public Acesso PesquisarPorIdSaida(int id)
+        {
+            try
+            {
+                return db.Acessoes.FirstOrDefault(x => x.AcessoId == id && x.AcessoDataSaida == null);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
