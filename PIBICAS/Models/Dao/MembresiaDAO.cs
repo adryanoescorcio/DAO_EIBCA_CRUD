@@ -17,6 +17,8 @@ namespace PIBICAS.Models.Dao
             {
                 db.Entry(obj).State = obj.MembresiaId == 0 ? EntityState.Added : EntityState.Modified;
                 db.SaveChanges();
+                db.Dispose();
+
             }
             catch (Exception ex)
             {
@@ -31,10 +33,26 @@ namespace PIBICAS.Models.Dao
                 var obj = db.Membresias.Find(id);
                 db.Membresias.Remove(obj);
                 db.SaveChanges();
+                db.Dispose();
             }
             catch (Exception ex)
             {
                 throw new Exception("Error ao excluir Objeto" + ex.Message);
+            }
+        }
+
+        public Membresia PesquisarPorUsuarioId(int usuarioId)
+        {
+            try
+            {
+                var objeto = db.Membresias.FirstOrDefault(x => x.MembresiaUsuarioId == usuarioId);
+                db.Dispose();
+                return objeto;
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
 
@@ -56,7 +74,9 @@ namespace PIBICAS.Models.Dao
         {
             try
             {
-                return db.Membresias.FirstOrDefault(x => x.MembresiaId == id);
+                var objeto = db.Membresias.FirstOrDefault(x => x.MembresiaId == id);
+                db.Dispose();
+                return objeto;
             }
             catch (Exception)
             {

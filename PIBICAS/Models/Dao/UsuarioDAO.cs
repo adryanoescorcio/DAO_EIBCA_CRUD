@@ -12,7 +12,7 @@ namespace PIBICAS.Models.Dao
         IBCAContext db = new IBCAContext();
 
         public void InsertOrUpdate(Usuario obj)
-        { 
+        {
             try
             {
                 db.Entry(obj).State = obj.UsuarioId == 0 ? EntityState.Added : EntityState.Modified;
@@ -45,7 +45,7 @@ namespace PIBICAS.Models.Dao
             try
             {
                 var dados = db.Usuarios;
-                db.Dispose();
+                //db.Dispose();
                 return dados;
             }
             catch (Exception ex)
@@ -60,6 +60,7 @@ namespace PIBICAS.Models.Dao
             {
                 var obj = db.Usuarios.FirstOrDefault(x => x.UsuarioId == id);
                 db.Dispose();
+
                 return obj;
             }
             catch (Exception)
