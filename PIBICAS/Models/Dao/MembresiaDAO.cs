@@ -26,6 +26,15 @@ namespace PIBICAS.Models.Dao
             }
         }
 
+        public IQueryable<Object> membrosAtivos(int idIgreja)
+        {
+            var objeto = from a in db.Membresias join b in db.Usuarios on a.MembresiaUsuarioId equals b.UsuarioId
+                         join f in db.Perfils on a.MembresiaPerfilID equals f.PerfilId
+                         where (a.MembresiaIgrejaID == idIgreja && b.UsuarioStatus == "Ativo") orderby f.PerfilNivel ascending, b.UsuarioNome
+                         select new { b.UsuarioId, UsuarioNomePerfil = String.Concat(f.PerfilNome, " - " ,b.UsuarioNome)};
+            return objeto;
+        }
+
         public void Delete(int id)
         {
             try
@@ -45,7 +54,7 @@ namespace PIBICAS.Models.Dao
         {
             try
             {
-                var objeto = db.Membresias.FirstOrDefault(x => x.MembresiaUsuarioId == usuarioId);
+                var objeto =  db.Membresias.FirstOrDefault(x => x.MembresiaUsuarioId == usuarioId);
                 db.Dispose();
                 return objeto;
             }

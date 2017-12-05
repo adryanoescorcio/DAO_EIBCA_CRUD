@@ -54,6 +54,12 @@ namespace PIBICAS.Models.Dao
             }
         }
 
+        public Usuario PesquisarPorIdEF(int id)
+        {
+            var obj = db.Usuarios.FirstOrDefault(x => x.UsuarioId == id);
+            return obj;
+        }
+
         public Usuario PesquisarPorId(int id)
         {
             try
