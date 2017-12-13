@@ -17,6 +17,9 @@ namespace PIBICAS.Models.Dao
             {
                 db.Entry(obj).State = obj.PlanoId == 0 ? EntityState.Added : EntityState.Modified;
                 db.SaveChanges();
+
+                db.Dispose();
+
             }
             catch (Exception ex)
             {
@@ -31,6 +34,8 @@ namespace PIBICAS.Models.Dao
                 var obj = db.Planoes.Find(id);
                 db.Planoes.Remove(obj);
                 db.SaveChanges();
+
+                db.Dispose();
             }
             catch (Exception ex)
             {
@@ -38,11 +43,13 @@ namespace PIBICAS.Models.Dao
             }
         }
 
-        public IQueryable<Plano> CarregarDados()
+        public IQueryable<Plano> CarregarDados(int idClasse)
         {
             try
             {
-                var dados = db.Planoes;
+                var dados = from a in db.Planoes join b in db.ClassePlanoAulas on a.PlanoClasseId equals b.ClasseId
+                            where b.ClasseId == idClasse && a.PlanoId == b.PlanoAulaId
+                            select a;
 
                 return dados;
             }
@@ -56,11 +63,13 @@ namespace PIBICAS.Models.Dao
         {
             try
             {
-                return db.Planoes.FirstOrDefault(x => x.PlanoId == id);
+                var obj = db.Planoes.FirstOrDefault(x => x.PlanoId == id);
+                db.Dispose();
+
+                return obj;
             }
             catch (Exception)
             {
-
                 throw;
             }
         }

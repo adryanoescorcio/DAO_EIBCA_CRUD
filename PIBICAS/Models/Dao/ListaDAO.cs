@@ -52,6 +52,11 @@ namespace PIBICAS.Models.Dao
             }
         }
 
+        public int PesquisarPorClasseAluno(int idAluno, int? idClasse)
+        {
+            return db.Listas.FirstOrDefault(x => x.ListaClasseId == idClasse && x.ListaAlunoId == idAluno).ListaId;
+        }
+
         public Lista PesquisarPorId(int id)
         {
             try

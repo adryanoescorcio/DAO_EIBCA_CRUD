@@ -24,7 +24,7 @@ namespace PIBICAS.Models.Mapping
 
             this.Property(t => t.ClasseStatus)
                 .IsRequired()
-                .HasMaxLength(8);
+                .HasMaxLength(20);
 
             this.Property(t => t.ClasseUsuario)
                 .IsRequired()

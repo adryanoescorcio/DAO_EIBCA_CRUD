@@ -19,6 +19,7 @@ namespace PIBICAS.Models.Dao
 
                 db.Entry(aluno).State = aluno.AlunoId == 0 ? EntityState.Added : EntityState.Modified;
                 db.SaveChanges();
+                db.Dispose();
             }
             catch (Exception ex)
             {
@@ -33,6 +34,8 @@ namespace PIBICAS.Models.Dao
                 var aluno = db.Alunoes.Find(id);
                 db.Alunoes.Remove(aluno);
                 db.SaveChanges();
+
+                db.Dispose();
             }
             catch (Exception ex)
             {
@@ -40,11 +43,14 @@ namespace PIBICAS.Models.Dao
             }
         }
 
-        public IQueryable<Aluno> CarregarDados()
+        public IQueryable<Aluno> CarregarDados(int idClasse)
         {
             try
             {
-                var dados = db.Alunoes;
+                var dados = from a in db.Alunoes
+                            join b in db.Listas on a.AlunoId equals b.ListaAlunoId
+                            where b.ListaClasseId == idClasse
+                            select a;
 
                 return dados;
             }
@@ -58,11 +64,13 @@ namespace PIBICAS.Models.Dao
         {
             try
             {
-                return db.Alunoes.FirstOrDefault(x => x.AlunoId == id);
+                var obj = db.Alunoes.FirstOrDefault(x => x.AlunoId == id);
+                db.Dispose();
+
+                return obj;
             }
             catch (Exception)
             {
-
                 throw;
             }
         }

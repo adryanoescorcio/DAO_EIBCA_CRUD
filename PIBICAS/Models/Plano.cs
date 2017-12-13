@@ -7,6 +7,7 @@ namespace PIBICAS.Models
     {
         public Plano()
         {
+            this.ClassePlanoAulas = new List<ClassePlanoAula>();
             this.Frequencias = new List<Frequencia>();
         }
 
@@ -21,6 +22,7 @@ namespace PIBICAS.Models
         public System.DateTime PlanoTempo { get; set; }
         public string PlanoTipoOperacao { get; set; }
         public string PlanoRastro { get; set; }
+        public virtual ICollection<ClassePlanoAula> ClassePlanoAulas { get; set; }
         public virtual Classe Classe { get; set; }
         public virtual ICollection<Frequencia> Frequencias { get; set; }
     }

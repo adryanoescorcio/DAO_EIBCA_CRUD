@@ -52,6 +52,11 @@ namespace PIBICAS.Models.Dao
             }
         }
 
+        public int PesquisarPorClassePlano(int idPlano, int idClasse)
+        {
+            return db.ClassePlanoAulas.FirstOrDefault(x => x.ClasseId == idClasse && x.PlanoAulaId == idPlano).ClassePlanoAulaId;
+        }
+
         public ClassePlanoAula PesquisarPorId(int id)
         {
             try

@@ -9,5 +9,6 @@ namespace PIBICAS.Models
         public int ClasseId { get; set; }
         public int PlanoAulaId { get; set; }
         public virtual Classe Classe { get; set; }
+        public virtual Plano Plano { get; set; }
     }
 }

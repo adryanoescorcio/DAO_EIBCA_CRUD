@@ -25,6 +25,11 @@ namespace PIBICAS.Models.Mapping
                 .WithMany(t => t.ClassePlanoAulas)
                 .HasForeignKey(d => d.ClasseId);
 
+            // Relationships
+            this.HasRequired(t => t.Plano)
+                .WithMany(t => t.ClassePlanoAulas)
+                .HasForeignKey(d => d.PlanoAulaId);
+
         }
     }
 }
