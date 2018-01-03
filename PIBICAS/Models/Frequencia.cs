@@ -10,6 +10,8 @@ namespace PIBICAS.Models
         public int ClasseId { get; set; }
         public int ListaId { get; set; }
         public string FrequenciaSituacao { get; set; }
+        public String FrequenciaUnique { get; set; }
+        public System.DateTime FrequenciaData { get; set; }
         public string FrequenciaUsuario { get; set; }
         public System.DateTime FrequenciaTempo { get; set; }
         public string FrequenciaTipoOperacao { get; set; }

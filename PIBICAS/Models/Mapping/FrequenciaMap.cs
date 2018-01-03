@@ -30,6 +30,10 @@ namespace PIBICAS.Models.Mapping
                 .IsRequired()
                 .HasMaxLength(200);
 
+            this.Property(t => t.FrequenciaUnique)
+                .IsRequired()
+                .HasMaxLength(100);
+
             // Table & Column Mappings
             this.ToTable("Frequencia");
             this.Property(t => t.FrequenciaId).HasColumnName("FrequenciaId");
@@ -38,9 +42,11 @@ namespace PIBICAS.Models.Mapping
             this.Property(t => t.ListaId).HasColumnName("ListaId");
             this.Property(t => t.FrequenciaSituacao).HasColumnName("FrequenciaSituacao");
             this.Property(t => t.FrequenciaUsuario).HasColumnName("FrequenciaUsuario");
+            this.Property(t => t.FrequenciaData).HasColumnName("FrequenciaData");
             this.Property(t => t.FrequenciaTempo).HasColumnName("FrequenciaTempo");
             this.Property(t => t.FrequenciaTipoOperacao).HasColumnName("FrequenciaTipoOperacao");
             this.Property(t => t.FrequenciaRastro).HasColumnName("FrequenciaRastro");
+            this.Property(t => t.FrequenciaUnique).HasColumnName("FrequencaUnique");
 
             // Relationships
             this.HasRequired(t => t.Classe)

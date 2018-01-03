@@ -17,6 +17,7 @@ namespace PIBICAS.Models.Dao
             {
                 db.Entry(obj).State = obj.FrequenciaId == 0 ? EntityState.Added : EntityState.Modified;
                 db.SaveChanges();
+                db.Dispose();
             }
             catch (Exception ex)
             {
@@ -31,6 +32,7 @@ namespace PIBICAS.Models.Dao
                 var obj = db.Frequencias.Find(id);
                 db.Frequencias.Remove(obj);
                 db.SaveChanges();
+                db.Dispose();
             }
             catch (Exception ex)
             {
@@ -38,11 +40,13 @@ namespace PIBICAS.Models.Dao
             }
         }
 
-        public IQueryable<Frequencia> CarregarDados()
+        public IQueryable<Object> CarregarDados(int idClasse)
         {
             try
             {
-                var dados = db.Frequencias;
+                var dados = (from a in db.Frequencias
+                             join b in db.Planoes on a.PlanoId equals b.PlanoId
+                             where a.ClasseId == idClasse select new { a.Plano.PlanoDescricao, a.ClasseId, a.FrequenciaUnique,a.FrequenciaData }).Distinct();
 
                 return dados;
             }
@@ -56,7 +60,22 @@ namespace PIBICAS.Models.Dao
         {
             try
             {
-                return db.Frequencias.FirstOrDefault(x => x.FrequenciaId == id);
+                var _dado = db.Frequencias.FirstOrDefault(x => x.FrequenciaId == id);
+                return _dado;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public Frequencia PesquisarPorIdUnique(String id)
+        {
+            try
+            {
+                var _dado = db.Frequencias.FirstOrDefault(x => x.FrequenciaUnique == id);
+                return _dado;
             }
             catch (Exception)
             {

@@ -42,7 +42,8 @@ namespace PIBICAS.Models.Dao
         {
             try
             {
-                var dados = db.Classes;
+                var dados = from a in db.Classes orderby a.ClasseDataInicio ascending, a.ClasseStatus ascending
+                            select a;
 
                 return dados;
             }
