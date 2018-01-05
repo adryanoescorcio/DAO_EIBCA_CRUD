@@ -19,9 +19,9 @@ namespace PIBICAS.Models.Mapping
                 .HasMaxLength(200);
 
             // Table & Column Mappings
-            this.ToTable("Denominacao");
-            this.Property(t => t.DenominacaoId).HasColumnName("DenominacaoId");
-            this.Property(t => t.DenominacaoNome).HasColumnName("DenominacaoNome");
+            this.ToTable("denominacao");
+            this.Property(t => t.DenominacaoId).HasColumnName("denominacaoid");
+            this.Property(t => t.DenominacaoNome).HasColumnName("denominacaonome");
         }
     }
 }

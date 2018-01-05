@@ -62,24 +62,24 @@ namespace PIBICAS.Models.Mapping
                 .HasMaxLength(200);
 
             // Table & Column Mappings
-            this.ToTable("Usuario");
-            this.Property(t => t.UsuarioId).HasColumnName("UsuarioId");
-            this.Property(t => t.UsuarioMunicipioId).HasColumnName("UsuarioMunicipioId");
-            this.Property(t => t.UsuarioNome).HasColumnName("UsuarioNome");
-            this.Property(t => t.UsuarioSobrenome).HasColumnName("UsuarioSobrenome");
-            this.Property(t => t.UsuarioDetalhes).HasColumnName("UsuarioDetalhes");
-            this.Property(t => t.UsuarioSexo).HasColumnName("UsuarioSexo");
-            this.Property(t => t.UsuarioEmail).HasColumnName("UsuarioEmail");
-            this.Property(t => t.UsuarioSenha).HasColumnName("UsuarioSenha");
-            this.Property(t => t.UsuarioCPF).HasColumnName("UsuarioCPF");
-            this.Property(t => t.UsuarioTentativaErro).HasColumnName("UsuarioTentativaErro");
-            this.Property(t => t.UsuarioTrocarSenha).HasColumnName("UsuarioTrocarSenha");
-            this.Property(t => t.UsuarioDataValidade).HasColumnName("UsuarioDataValidade");
-            this.Property(t => t.UsuarioStatus).HasColumnName("UsuarioStatus");
-            this.Property(t => t.UsuarioUsuario).HasColumnName("UsuarioUsuario");
-            this.Property(t => t.UsuarioTempo).HasColumnName("UsuarioTempo");
-            this.Property(t => t.UsuarioTipoOperacao).HasColumnName("UsuarioTipoOperacao");
-            this.Property(t => t.UsuarioRastro).HasColumnName("UsuarioRastro");
+            this.ToTable("usuario");
+            this.Property(t => t.UsuarioId).HasColumnName("usuarioid");
+            this.Property(t => t.UsuarioMunicipioId).HasColumnName("usuariomunicipioid");
+            this.Property(t => t.UsuarioNome).HasColumnName("usuarionome");
+            this.Property(t => t.UsuarioSobrenome).HasColumnName("usuariosobrenome");
+            this.Property(t => t.UsuarioDetalhes).HasColumnName("usuariodetalhes");
+            this.Property(t => t.UsuarioSexo).HasColumnName("usuariosexo");
+            this.Property(t => t.UsuarioEmail).HasColumnName("usuarioemail");
+            this.Property(t => t.UsuarioSenha).HasColumnName("usuariosenha");
+            this.Property(t => t.UsuarioCPF).HasColumnName("usuariocpf");
+            this.Property(t => t.UsuarioTentativaErro).HasColumnName("usuariotentativaerro");
+            this.Property(t => t.UsuarioTrocarSenha).HasColumnName("usuariotrocarsenha");
+            this.Property(t => t.UsuarioDataValidade).HasColumnName("usuariodatavalidade");
+            this.Property(t => t.UsuarioStatus).HasColumnName("usuariostatus");
+            this.Property(t => t.UsuarioUsuario).HasColumnName("usuariousuario");
+            this.Property(t => t.UsuarioTempo).HasColumnName("usuariotempo");
+            this.Property(t => t.UsuarioTipoOperacao).HasColumnName("usuariotipooperacao");
+            this.Property(t => t.UsuarioRastro).HasColumnName("usuariorastro");
 
             // Relationships
             this.HasOptional(t => t.Municipio)

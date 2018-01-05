@@ -5,6 +5,7 @@ using System.Web;
 using System.Data;
 using System.Data.Entity;
 
+
 namespace PIBICAS.Models.Dao
 {
     public class PlanoDAO
@@ -27,6 +28,18 @@ namespace PIBICAS.Models.Dao
             }
         }
 
+        public IEnumerable<Object> CarregarDadosDataSet(int v)
+        {
+            var dados = (from a in db.Planoes
+                        join b in db.ClassePlanoAulas on a.PlanoClasseId equals b.ClasseId
+                        where b.ClasseId == v && a.PlanoId == b.PlanoAulaId
+                        select new { a.PlanoId,a.PlanoClasseId }).AsEnumerable();
+
+            
+            return dados;
+
+        }
+
         public void Delete(int id)
         {
             try
@@ -47,7 +60,8 @@ namespace PIBICAS.Models.Dao
         {
             try
             {
-                var dados = from a in db.Planoes join b in db.ClassePlanoAulas on a.PlanoClasseId equals b.ClasseId
+                var dados = from a in db.Planoes
+                            join b in db.ClassePlanoAulas on a.PlanoClasseId equals b.ClasseId
                             where b.ClasseId == idClasse && a.PlanoId == b.PlanoAulaId
                             select a;
 

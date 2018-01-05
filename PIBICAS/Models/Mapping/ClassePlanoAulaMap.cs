@@ -15,10 +15,10 @@ namespace PIBICAS.Models.Mapping
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             // Table & Column Mappings
-            this.ToTable("ClassePlanoAula");
-            this.Property(t => t.ClassePlanoAulaId).HasColumnName("ClassePlanoAulaId");
-            this.Property(t => t.ClasseId).HasColumnName("ClasseId");
-            this.Property(t => t.PlanoAulaId).HasColumnName("PlanoAulaId");
+            this.ToTable("classeplanoaula");
+            this.Property(t => t.ClassePlanoAulaId).HasColumnName("classeplanoaulaid");
+            this.Property(t => t.ClasseId).HasColumnName("classeid");
+            this.Property(t => t.PlanoAulaId).HasColumnName("planoaulaid");
 
             // Relationships
             this.HasRequired(t => t.Classe)

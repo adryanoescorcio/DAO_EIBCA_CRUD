@@ -31,15 +31,15 @@ namespace PIBICAS.Models.Mapping
                 .HasMaxLength(200);
 
             // Table & Column Mappings
-            this.ToTable("UsuarioFuncionalidade");
-            this.Property(t => t.UsuarioFuncionalidadeId).HasColumnName("UsuarioFuncionalidadeId");
-            this.Property(t => t.UsuarioID).HasColumnName("UsuarioID");
-            this.Property(t => t.FuncionalidadeId).HasColumnName("FuncionalidadeId");
-            this.Property(t => t.UsuarioFuncionalidadePrincipal).HasColumnName("UsuarioFuncionalidadePrincipal");
-            this.Property(t => t.UsuarioFuncionalidadeUsuario).HasColumnName("UsuarioFuncionalidadeUsuario");
-            this.Property(t => t.UsuarioFuncionalidadeTempo).HasColumnName("UsuarioFuncionalidadeTempo");
-            this.Property(t => t.UsuarioFuncionalidadeTipoOperacao).HasColumnName("UsuarioFuncionalidadeTipoOperacao");
-            this.Property(t => t.UsuarioFuncionalidadeRastro).HasColumnName("UsuarioFuncionalidadeRastro");
+            this.ToTable("usuariofuncionalidade");
+            this.Property(t => t.UsuarioFuncionalidadeId).HasColumnName("usuariofuncionalidadeid");
+            this.Property(t => t.UsuarioID).HasColumnName("usuarioid");
+            this.Property(t => t.FuncionalidadeId).HasColumnName("funcionalidadeid");
+            this.Property(t => t.UsuarioFuncionalidadePrincipal).HasColumnName("usuariofuncionalidadeprincipal");
+            this.Property(t => t.UsuarioFuncionalidadeUsuario).HasColumnName("usuariofuncionalidadeusuario");
+            this.Property(t => t.UsuarioFuncionalidadeTempo).HasColumnName("usuariofuncionalidadetempo");
+            this.Property(t => t.UsuarioFuncionalidadeTipoOperacao).HasColumnName("usuariofuncionalidadetipooperacao");
+            this.Property(t => t.UsuarioFuncionalidadeRastro).HasColumnName("usuariofuncionalidaderastro");
 
             // Relationships
             this.HasRequired(t => t.Funcionalidade)

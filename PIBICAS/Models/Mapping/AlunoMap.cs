@@ -16,7 +16,7 @@ namespace PIBICAS.Models.Mapping
 
             this.Property(t => t.AlunoNome)
                 .IsRequired()
-                .HasMaxLength(80);
+                .HasMaxLength(100);
 
             this.Property(t => t.AlunoCPF)
                 .IsRequired()
@@ -62,24 +62,24 @@ namespace PIBICAS.Models.Mapping
                 .HasMaxLength(100);
 
             // Table & Column Mappings
-            this.ToTable("Aluno");
-            this.Property(t => t.AlunoId).HasColumnName("AlunoId");
-            this.Property(t => t.AlunoNome).HasColumnName("AlunoNome");
-            this.Property(t => t.AlunoCPF).HasColumnName("AlunoCPF");
-            this.Property(t => t.AlunoSituacao).HasColumnName("AlunoSituacao");
-            this.Property(t => t.AlunoRepetir).HasColumnName("AlunoRepetir");
-            this.Property(t => t.AlunoDataNascimento).HasColumnName("AlunoDataNascimento");
-            this.Property(t => t.AlunoCelular1).HasColumnName("AlunoCelular1");
-            this.Property(t => t.AlunoCelular2).HasColumnName("AlunoCelular2");
-            this.Property(t => t.AlunoEscolaridade).HasColumnName("AlunoEscolaridade");
-            this.Property(t => t.AlunoEquipe).HasColumnName("AlunoEquipe");
-            this.Property(t => t.AlunoCelula).HasColumnName("AlunoCelula");
-            this.Property(t => t.AlunoDiscipulador).HasColumnName("AlunoDiscipulador");
-            this.Property(t => t.AlunoBatismo).HasColumnName("AlunoBatismo");
-            this.Property(t => t.AlunoUsuario).HasColumnName("AlunoUsuario");
-            this.Property(t => t.AlunoTempo).HasColumnName("AlunoTempo");
-            this.Property(t => t.AlunoTipoOperacao).HasColumnName("AlunoTipoOperacao");
-            this.Property(t => t.AlunoRastro).HasColumnName("AlunoRastro");
+            this.ToTable("aluno");
+            this.Property(t => t.AlunoId).HasColumnName("alunoid");
+            this.Property(t => t.AlunoNome).HasColumnName("alunonome");
+            this.Property(t => t.AlunoCPF).HasColumnName("alunocpf");
+            this.Property(t => t.AlunoSituacao).HasColumnName("alunosituacao");
+            this.Property(t => t.AlunoRepetir).HasColumnName("alunorepetir");
+            this.Property(t => t.AlunoDataNascimento).HasColumnName("alunodatanascimento");
+            this.Property(t => t.AlunoCelular1).HasColumnName("alunocelular1");
+            this.Property(t => t.AlunoCelular2).HasColumnName("alunocelular2");
+            this.Property(t => t.AlunoEscolaridade).HasColumnName("alunoescolaridade");
+            this.Property(t => t.AlunoEquipe).HasColumnName("alunoequipe");
+            this.Property(t => t.AlunoCelula).HasColumnName("alunocelula");
+            this.Property(t => t.AlunoDiscipulador).HasColumnName("alunodiscipulador");
+            this.Property(t => t.AlunoBatismo).HasColumnName("alunobatismo");
+            this.Property(t => t.AlunoUsuario).HasColumnName("alunousuario");
+            this.Property(t => t.AlunoTempo).HasColumnName("alunotempo");
+            this.Property(t => t.AlunoTipoOperacao).HasColumnName("alunotipooperacao");
+            this.Property(t => t.AlunoRastro).HasColumnName("alunorastro");
         }
     }
 }

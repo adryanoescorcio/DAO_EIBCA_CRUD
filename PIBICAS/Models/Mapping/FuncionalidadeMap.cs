@@ -31,13 +31,13 @@ namespace PIBICAS.Models.Mapping
                 .HasMaxLength(200);
 
             // Table & Column Mappings
-            this.ToTable("Funcionalidade");
-            this.Property(t => t.FuncionalidadeId).HasColumnName("FuncionalidadeId");
-            this.Property(t => t.FuncionalidadeNome).HasColumnName("FuncionalidadeNome");
-            this.Property(t => t.FuncionalidadeUsuario).HasColumnName("FuncionalidadeUsuario");
-            this.Property(t => t.FuncionalidadeTempo).HasColumnName("FuncionalidadeTempo");
-            this.Property(t => t.FuncionalidadeTipoOperacao).HasColumnName("FuncionalidadeTipoOperacao");
-            this.Property(t => t.FuncionalidadeRastro).HasColumnName("FuncionalidadeRastro");
+            this.ToTable("funcionalidade");
+            this.Property(t => t.FuncionalidadeId).HasColumnName("funcionalidadeid");
+            this.Property(t => t.FuncionalidadeNome).HasColumnName("funcionalidadenome");
+            this.Property(t => t.FuncionalidadeUsuario).HasColumnName("funcionalidadeusuario");
+            this.Property(t => t.FuncionalidadeTempo).HasColumnName("funcionalidadetempo");
+            this.Property(t => t.FuncionalidadeTipoOperacao).HasColumnName("funcionalidadetipooperacao");
+            this.Property(t => t.FuncionalidadeRastro).HasColumnName("funcionalidaderastro");
         }
     }
 }

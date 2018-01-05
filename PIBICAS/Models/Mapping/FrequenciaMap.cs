@@ -35,18 +35,18 @@ namespace PIBICAS.Models.Mapping
                 .HasMaxLength(100);
 
             // Table & Column Mappings
-            this.ToTable("Frequencia");
-            this.Property(t => t.FrequenciaId).HasColumnName("FrequenciaId");
-            this.Property(t => t.PlanoId).HasColumnName("PlanoId");
-            this.Property(t => t.ClasseId).HasColumnName("ClasseId");
-            this.Property(t => t.ListaId).HasColumnName("ListaId");
-            this.Property(t => t.FrequenciaSituacao).HasColumnName("FrequenciaSituacao");
-            this.Property(t => t.FrequenciaUsuario).HasColumnName("FrequenciaUsuario");
-            this.Property(t => t.FrequenciaData).HasColumnName("FrequenciaData");
-            this.Property(t => t.FrequenciaTempo).HasColumnName("FrequenciaTempo");
-            this.Property(t => t.FrequenciaTipoOperacao).HasColumnName("FrequenciaTipoOperacao");
-            this.Property(t => t.FrequenciaRastro).HasColumnName("FrequenciaRastro");
-            this.Property(t => t.FrequenciaUnique).HasColumnName("FrequencaUnique");
+            this.ToTable("frequencia");
+            this.Property(t => t.FrequenciaId).HasColumnName("frequenciaid");
+            this.Property(t => t.PlanoId).HasColumnName("planoid");
+            this.Property(t => t.ClasseId).HasColumnName("classeid");
+            this.Property(t => t.ListaId).HasColumnName("listaid");
+            this.Property(t => t.FrequenciaSituacao).HasColumnName("frequenciasituacao");
+            this.Property(t => t.FrequenciaUsuario).HasColumnName("frequenciausuario");
+            this.Property(t => t.FrequenciaData).HasColumnName("frequenciadata");
+            this.Property(t => t.FrequenciaTempo).HasColumnName("frequenciatempo");
+            this.Property(t => t.FrequenciaTipoOperacao).HasColumnName("frequenciatipooperacao");
+            this.Property(t => t.FrequenciaRastro).HasColumnName("frequenciarastro");
+            this.Property(t => t.FrequenciaUnique).HasColumnName("frequencaunique");
 
             // Relationships
             this.HasRequired(t => t.Classe)

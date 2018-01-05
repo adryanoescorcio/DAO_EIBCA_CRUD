@@ -31,7 +31,7 @@ namespace PIBICAS.Models.Dao
             var objeto = from a in db.Membresias join b in db.Usuarios on a.MembresiaUsuarioId equals b.UsuarioId
                          join f in db.Perfils on a.MembresiaPerfilID equals f.PerfilId
                          where (a.MembresiaIgrejaID == idIgreja && b.UsuarioStatus == "Ativo") orderby f.PerfilNivel ascending, b.UsuarioNome
-                         select new { b.UsuarioId, UsuarioNomePerfil = String.Concat(f.PerfilNome, " - " ,b.UsuarioNome)};
+                         select new { a.MembresiaId, UsuarioNomePerfil = String.Concat(f.PerfilNome, " - " ,b.UsuarioNome)};
             return objeto;
         }
 

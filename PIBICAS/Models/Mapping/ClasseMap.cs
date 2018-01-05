@@ -39,19 +39,19 @@ namespace PIBICAS.Models.Mapping
                 .HasMaxLength(200);
 
             // Table & Column Mappings
-            this.ToTable("Classe");
-            this.Property(t => t.ClasseId).HasColumnName("ClasseId");
-            this.Property(t => t.ClasseMembresiaId).HasColumnName("ClasseMembresiaId");
-            this.Property(t => t.ClasseCodigo).HasColumnName("ClasseCodigo");
-            this.Property(t => t.ClasseDataInicio).HasColumnName("ClasseDataInicio");
-            this.Property(t => t.ClasseDataFim).HasColumnName("ClasseDataFim");
-            this.Property(t => t.ClasseObservacao).HasColumnName("ClasseObservacao");
-            this.Property(t => t.ClasseCargaHoraria).HasColumnName("ClasseCargaHoraria");
-            this.Property(t => t.ClasseStatus).HasColumnName("ClasseStatus");
-            this.Property(t => t.ClasseUsuario).HasColumnName("ClasseUsuario");
-            this.Property(t => t.ClasseTempo).HasColumnName("ClasseTempo");
-            this.Property(t => t.ClasseTipoOperacao).HasColumnName("ClasseTipoOperacao");
-            this.Property(t => t.ClasseRastro).HasColumnName("ClasseRastro");
+            this.ToTable("classe");
+            this.Property(t => t.ClasseId).HasColumnName("classeid");
+            this.Property(t => t.ClasseMembresiaId).HasColumnName("classemembresiaid");
+            this.Property(t => t.ClasseCodigo).HasColumnName("classecodigo");
+            this.Property(t => t.ClasseDataInicio).HasColumnName("classedatainicio");
+            this.Property(t => t.ClasseDataFim).HasColumnName("classedatafim");
+            this.Property(t => t.ClasseObservacao).HasColumnName("classeobservacao");
+            this.Property(t => t.ClasseCargaHoraria).HasColumnName("classecargahoraria");
+            this.Property(t => t.ClasseStatus).HasColumnName("classestatus");
+            this.Property(t => t.ClasseUsuario).HasColumnName("classeusuario");
+            this.Property(t => t.ClasseTempo).HasColumnName("classetempo");
+            this.Property(t => t.ClasseTipoOperacao).HasColumnName("classetipooperacao");
+            this.Property(t => t.ClasseRastro).HasColumnName("classerastro");
 
             // Relationships
             this.HasRequired(t => t.Membresia)

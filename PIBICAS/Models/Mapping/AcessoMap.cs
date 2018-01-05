@@ -15,11 +15,12 @@ namespace PIBICAS.Models.Mapping
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             // Table & Column Mappings
-            this.ToTable("Acesso");
-            this.Property(t => t.AcessoId).HasColumnName("AcessoId");
-            this.Property(t => t.AcessoUsuarioID).HasColumnName("AcessoUsuarioID");
-            this.Property(t => t.AcessoDataEntrada).HasColumnName("AcessoDataEntrada");
-            this.Property(t => t.AcessoDataSaida).HasColumnName("AcessoDataSaida");
+            this.ToTable("acesso");
+
+            this.Property(t => t.AcessoId).HasColumnName("acessoid");
+            this.Property(t => t.AcessoUsuarioID).HasColumnName("acessousuarioid");
+            this.Property(t => t.AcessoDataEntrada).HasColumnName("acessodataentrada");
+            this.Property(t => t.AcessoDataSaida).HasColumnName("acessodatasaida");
 
             // Relationships
             this.HasRequired(t => t.Usuario)

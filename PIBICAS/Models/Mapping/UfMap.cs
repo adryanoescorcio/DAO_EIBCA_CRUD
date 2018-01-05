@@ -23,10 +23,10 @@ namespace PIBICAS.Models.Mapping
                 .HasMaxLength(80);
 
             // Table & Column Mappings
-            this.ToTable("Uf");
-            this.Property(t => t.UfId).HasColumnName("UfId");
-            this.Property(t => t.UfSigla).HasColumnName("UfSigla");
-            this.Property(t => t.UfNome).HasColumnName("UfNome");
+            this.ToTable("uf");
+            this.Property(t => t.UfId).HasColumnName("ufid");
+            this.Property(t => t.UfSigla).HasColumnName("ufsigla");
+            this.Property(t => t.UfNome).HasColumnName("ufnome");
         }
     }
 }

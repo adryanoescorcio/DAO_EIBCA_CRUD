@@ -19,10 +19,10 @@ namespace PIBICAS.Models.Mapping
                 .HasMaxLength(100);
 
             // Table & Column Mappings
-            this.ToTable("Municipio");
-            this.Property(t => t.MunicipioId).HasColumnName("MunicipioId");
-            this.Property(t => t.MunicipioIdUf).HasColumnName("MunicipioUfId");
-            this.Property(t => t.MunicipioNome).HasColumnName("MunicipioNome");
+            this.ToTable("municipio");
+            this.Property(t => t.MunicipioId).HasColumnName("municipioid");
+            this.Property(t => t.MunicipioIdUf).HasColumnName("municipioufid");
+            this.Property(t => t.MunicipioNome).HasColumnName("municipionome");
 
             // Relationships
             this.HasRequired(t => t.Uf)

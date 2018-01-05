@@ -34,18 +34,18 @@ namespace PIBICAS.Models.Mapping
                 .HasMaxLength(200);
 
             // Table & Column Mappings
-            this.ToTable("Plano");
-            this.Property(t => t.PlanoId).HasColumnName("PlanoId");
-            this.Property(t => t.PlanoClasseId).HasColumnName("PlanoClasseId");
-            this.Property(t => t.PlanoDescricao).HasColumnName("PlanoDescricao");
-            this.Property(t => t.PlanoProfessor).HasColumnName("PlanoProfessor");
-            this.Property(t => t.PlanoDataPrevista).HasColumnName("PlanoDataPrevista");
-            this.Property(t => t.PlanoHoraAula).HasColumnName("PlanoHoraAula");
-            this.Property(t => t.PlanoObservacao).HasColumnName("PlanoObservacao");
-            this.Property(t => t.PlanoUsuario).HasColumnName("PlanoUsuario");
-            this.Property(t => t.PlanoTempo).HasColumnName("PlanoTempo");
-            this.Property(t => t.PlanoTipoOperacao).HasColumnName("PlanoTipoOperacao");
-            this.Property(t => t.PlanoRastro).HasColumnName("PlanoRastro");
+            this.ToTable("plano");
+            this.Property(t => t.PlanoId).HasColumnName("planoid");
+            this.Property(t => t.PlanoClasseId).HasColumnName("planoclasseid");
+            this.Property(t => t.PlanoDescricao).HasColumnName("planodescricao");
+            this.Property(t => t.PlanoProfessor).HasColumnName("planoprofessor");
+            this.Property(t => t.PlanoDataPrevista).HasColumnName("planodataprevista");
+            this.Property(t => t.PlanoHoraAula).HasColumnName("planohoraaula");
+            this.Property(t => t.PlanoObservacao).HasColumnName("planoobservacao");
+            this.Property(t => t.PlanoUsuario).HasColumnName("planousuario");
+            this.Property(t => t.PlanoTempo).HasColumnName("planotempo");
+            this.Property(t => t.PlanoTipoOperacao).HasColumnName("planotipooperacao");
+            this.Property(t => t.PlanoRastro).HasColumnName("planorastro");
 
             // Relationships
             this.HasRequired(t => t.Classe)

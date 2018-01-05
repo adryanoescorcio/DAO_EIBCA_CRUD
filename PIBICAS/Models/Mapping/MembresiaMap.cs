@@ -23,13 +23,13 @@ namespace PIBICAS.Models.Mapping
                 .HasMaxLength(10);
 
             // Table & Column Mappings
-            this.ToTable("Membresia");
-            this.Property(t => t.MembresiaId).HasColumnName("MembresiaId");
-            this.Property(t => t.MembresiaUsuarioId).HasColumnName("MembresiaUsuarioId");
-            this.Property(t => t.MembresiaIgrejaID).HasColumnName("MembresiaIgrejaID");
-            this.Property(t => t.MembresiaPerfilID).HasColumnName("MembresiaPerfilID");
-            this.Property(t => t.MembresiaMatricula).HasColumnName("MembresiaMatricula");
-            this.Property(t => t.MembresiaStatus).HasColumnName("MembresiaStatus");
+            this.ToTable("membresia");
+            this.Property(t => t.MembresiaId).HasColumnName("membresiaid");
+            this.Property(t => t.MembresiaUsuarioId).HasColumnName("membresiausuarioid");
+            this.Property(t => t.MembresiaIgrejaID).HasColumnName("membresiaigrejaid");
+            this.Property(t => t.MembresiaPerfilID).HasColumnName("membresiaperfilid");
+            this.Property(t => t.MembresiaMatricula).HasColumnName("membresiamatricula");
+            this.Property(t => t.MembresiaStatus).HasColumnName("membresiastatus");
 
             // Relationships
             this.HasRequired(t => t.Igreja)

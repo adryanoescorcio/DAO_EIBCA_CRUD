@@ -19,10 +19,10 @@ namespace PIBICAS.Models.Mapping
                 .HasMaxLength(45);
 
             // Table & Column Mappings
-            this.ToTable("Perfil");
-            this.Property(t => t.PerfilId).HasColumnName("PerfilId");
-            this.Property(t => t.PerfilNome).HasColumnName("PerfilNome");
-            this.Property(t => t.PerfilNivel).HasColumnName("PerfilNivel");
+            this.ToTable("perfil");
+            this.Property(t => t.PerfilId).HasColumnName("perfilid");
+            this.Property(t => t.PerfilNome).HasColumnName("perfilnome");
+            this.Property(t => t.PerfilNivel).HasColumnName("perfilnivel");
         }
     }
 }

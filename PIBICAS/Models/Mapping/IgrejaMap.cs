@@ -45,18 +45,18 @@ namespace PIBICAS.Models.Mapping
                 .HasMaxLength(80);
 
             // Table & Column Mappings
-            this.ToTable("Igreja");
-            this.Property(t => t.IgrejaId).HasColumnName("IgrejaId");
-            this.Property(t => t.IgrejaDenominacaoId).HasColumnName("IgrejaDenominacaoId");
-            this.Property(t => t.IgrejaNome).HasColumnName("IgrejaNome");
-            this.Property(t => t.IgrejaTelefone).HasColumnName("IgrejaTelefone");
-            this.Property(t => t.IgrejaSlogan).HasColumnName("IgrejaSlogan");
-            this.Property(t => t.IgrejaSigla).HasColumnName("IgrejaSigla");
-            this.Property(t => t.IgrejaEndereco).HasColumnName("IgrejaEndereco");
-            this.Property(t => t.IgrejaBairro).HasColumnName("IgrejaBairro");
-            this.Property(t => t.IgrejaLogo).HasColumnName("IgrejaLogo");
-            this.Property(t => t.IgrejaMunicipio).HasColumnName("IgrejaMunicipio");
-            this.Property(t => t.IgrejaEstado).HasColumnName("IgrejaEstado");
+            this.ToTable("igreja");
+            this.Property(t => t.IgrejaId).HasColumnName("igrejaid");
+            this.Property(t => t.IgrejaDenominacaoId).HasColumnName("igrejadenominacaoid");
+            this.Property(t => t.IgrejaNome).HasColumnName("igrejanome");
+            this.Property(t => t.IgrejaTelefone).HasColumnName("igrejatelefone");
+            this.Property(t => t.IgrejaSlogan).HasColumnName("igrejaslogan");
+            this.Property(t => t.IgrejaSigla).HasColumnName("igrejasigla");
+            this.Property(t => t.IgrejaEndereco).HasColumnName("igrejaendereco");
+            this.Property(t => t.IgrejaBairro).HasColumnName("igrejabairro");
+            this.Property(t => t.IgrejaLogo).HasColumnName("igrejalogo");
+            this.Property(t => t.IgrejaMunicipio).HasColumnName("igrejamunicipio");
+            this.Property(t => t.IgrejaEstado).HasColumnName("igrejaestado");
 
             // Relationships
             this.HasRequired(t => t.Denominacao)
