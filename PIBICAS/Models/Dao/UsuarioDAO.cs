@@ -75,6 +75,22 @@ namespace PIBICAS.Models.Dao
             }
         }
 
+        public Usuario PesquisarPorCPF(string text)
+        {
+            try
+            {
+                var obj = db.Usuarios.FirstOrDefault(x => x.UsuarioCPF == text);
+                db.Dispose();
+
+                return obj;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public Usuario PesquisarPorEmail(String _email)
         {
             try

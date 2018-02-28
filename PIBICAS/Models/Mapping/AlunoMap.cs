@@ -68,6 +68,7 @@ namespace PIBICAS.Models.Mapping
             this.Property(t => t.AlunoCPF).HasColumnName("alunocpf");
             this.Property(t => t.AlunoSituacao).HasColumnName("alunosituacao");
             this.Property(t => t.AlunoRepetir).HasColumnName("alunorepetir");
+            this.Property(t => t.AlunoDataMatricula).HasColumnName("alunomatricula");
             this.Property(t => t.AlunoDataNascimento).HasColumnName("alunodatanascimento");
             this.Property(t => t.AlunoCelular1).HasColumnName("alunocelular1");
             this.Property(t => t.AlunoCelular2).HasColumnName("alunocelular2");

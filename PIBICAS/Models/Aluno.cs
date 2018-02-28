@@ -18,6 +18,7 @@ namespace PIBICAS.Models
         public string AlunoSituacao { get; set; }
         public string AlunoRepetir { get; set; }
         public System.DateTime AlunoDataNascimento { get; set; }
+        public System.DateTime AlunoDataMatricula { get; set; }
         public string AlunoCelular1 { get; set; }
         public string AlunoCelular2 { get; set; }
         public string AlunoEscolaridade { get; set; }
