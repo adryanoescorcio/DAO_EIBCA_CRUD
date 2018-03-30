@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Data;
 using System.Data.Entity;
+using PIBICAS.Models.Context;
 
 namespace PIBICAS.Models.Dao
 {
@@ -42,10 +41,28 @@ namespace PIBICAS.Models.Dao
         {
             try
             {
-                var dados = from a in db.Classes orderby a.ClasseDataInicio ascending, a.ClasseStatus ascending
+                var dados = from a in db.Classes
+                            orderby a.ClasseDataInicio ascending, a.ClasseStatus ascending
                             select a;
 
                 return dados;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error ao carregar os dados" + ex.Message);
+            }
+        }
+
+        public DbSet CarregarDadosDS()
+        {
+            try
+            {
+                var dados = (from a in db.Classes
+                            orderby a.ClasseDataInicio ascending, a.ClasseStatus ascending
+                            select new Classe { }).ToList();
+
+                DataTable tb = new DataTable("Classe");
+                return db.Classes;
             }
             catch (Exception ex)
             {

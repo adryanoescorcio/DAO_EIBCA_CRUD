@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Data.Entity;
-
+using PIBICAS.Models.Context;
 
 namespace PIBICAS.Models.Dao
 {

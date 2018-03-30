@@ -3,7 +3,7 @@ using System.Data.Entity.Infrastructure;
 using PIBICAS.Models.Mapping;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace PIBICAS.Models
+namespace PIBICAS.Models.Context
 {
     public partial class IBCAContext : DbContext
     {

@@ -1,11 +1,9 @@
 namespace PIBICAS.Migrations
 {
-    using System;
-    using System.Data.Entity;
+    using PIBICAS.Models.Context;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<PIBICAS.Models.IBCAContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<IBCAContext>
     {
         public Configuration()
         {
@@ -14,7 +12,7 @@ namespace PIBICAS.Migrations
 
         }
 
-        protected override void Seed(PIBICAS.Models.IBCAContext context)
+        protected override void Seed(IBCAContext context)
         {
             //  This method will be called after migrating to the latest version.
 
